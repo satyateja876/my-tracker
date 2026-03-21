@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <title>My Task Tracker</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>📋 My Task Tracker</h1>
+            <div class="date-box">
+                <span id="currentDate"></span>
+            </div>
+        </header>
+
+        <div class="tasks-section">
+            <h2>Today's Tasks</h2>
+            <div id="tasksList" class="tasks-list">
+                <!-- Tasks will appear here -->
+            </div>
+            
+            <div class="add-task">
+                <input type="text" id="newTaskInput" placeholder="Enter new task...">
+                <button id="addTaskBtn">➕ Add Task</button>
+            </div>
+        </div>
+
+        <div class="progress-section">
+            <h2>📊 Your Progress</h2>
+            
+            <div class="stats-cards">
+                <div class="stat-card">
+                    <span class="stat-label">Today</span>
+                    <div class="progress-bar-container">
+                        <div class="progress-bar" id="todayBar"></div>
+                    </div>
+                    <span class="stat-percent" id="todayPercent">0%</span>
+                </div>
+                
+                <div class="stat-card">
+                    <span class="stat-label">This Week</span>
+                    <div class="progress-bar-container">
+                        <div class="progress-bar" id="weekBar"></div>
+                    </div>
+                    <span class="stat-percent" id="weekPercent">0%</span>
+                </div>
+                
+                <div class="stat-card">
+                    <span class="stat-label">This Month</span>
+                    <div class="progress-bar-container">
+                        <div class="progress-bar" id="monthBar"></div>
+                    </div>
+                    <span class="stat-percent" id="monthPercent">0%</span>
+                </div>
+                
+                <div class="stat-card">
+                    <span class="stat-label">Last 6 Months</span>
+                    <div class="progress-bar-container">
+                        <div class="progress-bar" id="sixMonthBar"></div>
+                    </div>
+                    <span class="stat-percent" id="sixMonthPercent">0%</span>
+                </div>
+                
+                <div class="stat-card">
+                    <span class="stat-label">This Year</span>
+                    <div class="progress-bar-container">
+                        <div class="progress-bar" id="yearBar"></div>
+                    </div>
+                    <span class="stat-percent" id="yearPercent">0%</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="footer-actions">
+            <button id="resetDataBtn" class="danger-btn">🗑️ Reset All Data</button>
+            <button id="exportDataBtn" class="secondary-btn">📤 Backup Data</button>
+            <button id="importDataBtn" class="secondary-btn">📥 Restore Backup</button>
+            <input type="file" id="importFile" accept=".json" style="display: none;">
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
