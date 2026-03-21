@@ -1,11 +1,10 @@
 :root {
-  --deep-green: #07332c;
-  --forest-green: #485d46;
-  --sage-gray: #a6afa6;
-  --golden-tan: #bca879;
-  --light-gray: #ebebed;
+  --white: #fefefe;
+  --light-gray: #e7e9f0;
+  --deep-navy: #051747;
+  --muted-blue: #535f80;
+  --rich-blue: #081f62;
 }
-
 /* RESET */
 * {
     margin: 0;
