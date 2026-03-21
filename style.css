@@ -1,0 +1,300 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    min-height: 100vh;
+    padding: 20px;
+}
+
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+    background: white;
+    border-radius: 30px;
+    box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+    overflow: hidden;
+    padding: 20px;
+}
+
+header {
+    text-align: center;
+    padding: 20px 0;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    margin: -20px -20px 20px -20px;
+    color: white;
+}
+
+header h1 {
+    font-size: 1.8rem;
+    margin-bottom: 10px;
+}
+
+.date-box {
+    font-size: 1.2rem;
+    font-weight: bold;
+    background: rgba(255,255,255,0.2);
+    display: inline-block;
+    padding: 8px 20px;
+    border-radius: 50px;
+}
+
+.tasks-section {
+    margin-bottom: 30px;
+}
+
+.tasks-section h2 {
+    color: #333;
+    margin-bottom: 15px;
+    font-size: 1.3rem;
+}
+
+.tasks-list {
+    background: #f8f9fa;
+    border-radius: 20px;
+    padding: 10px;
+    margin-bottom: 15px;
+    max-height: 400px;
+    overflow-y: auto;
+}
+
+.task-item {
+    background: white;
+    padding: 15px;
+    margin-bottom: 10px;
+    border-radius: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+    transition: transform 0.2s;
+}
+
+.task-item:hover {
+    transform: translateX(5px);
+}
+
+.task-name {
+    flex: 1;
+    font-size: 1rem;
+    color: #333;
+    word-break: break-word;
+    padding-right: 10px;
+}
+
+.task-buttons {
+    display: flex;
+    gap: 10px;
+}
+
+.btn-done, .btn-missed {
+    padding: 8px 20px;
+    border: none;
+    border-radius: 25px;
+    font-size: 0.9rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.btn-done {
+    background: #10b981;
+    color: white;
+}
+
+.btn-done:hover {
+    background: #059669;
+    transform: scale(1.05);
+}
+
+.btn-missed {
+    background: #ef4444;
+    color: white;
+}
+
+.btn-missed:hover {
+    background: #dc2626;
+    transform: scale(1.05);
+}
+
+.task-item.completed .btn-done {
+    background: #059669;
+    opacity: 0.8;
+}
+
+.add-task {
+    display: flex;
+    gap: 10px;
+    margin-top: 10px;
+}
+
+.add-task input {
+    flex: 1;
+    padding: 12px 15px;
+    border: 2px solid #e5e7eb;
+    border-radius: 25px;
+    font-size: 1rem;
+    outline: none;
+    transition: border-color 0.2s;
+}
+
+.add-task input:focus {
+    border-color: #667eea;
+}
+
+.add-task button {
+    padding: 12px 20px;
+    background: #667eea;
+    color: white;
+    border: none;
+    border-radius: 25px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+
+.add-task button:hover {
+    background: #5a67d8;
+}
+
+.progress-section {
+    margin-bottom: 30px;
+}
+
+.progress-section h2 {
+    color: #333;
+    margin-bottom: 15px;
+    font-size: 1.3rem;
+}
+
+.stats-cards {
+    background: #f8f9fa;
+    border-radius: 20px;
+    padding: 20px;
+}
+
+.stat-card {
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    flex-wrap: wrap;
+}
+
+.stat-label {
+    width: 110px;
+    font-weight: bold;
+    color: #4b5563;
+}
+
+.progress-bar-container {
+    flex: 1;
+    height: 30px;
+    background: #e5e7eb;
+    border-radius: 15px;
+    overflow: hidden;
+}
+
+.progress-bar {
+    height: 100%;
+    background: linear-gradient(90deg, #10b981, #34d399);
+    width: 0%;
+    transition: width 0.5s ease;
+    border-radius: 15px;
+}
+
+.stat-percent {
+    width: 50px;
+    font-weight: bold;
+    color: #10b981;
+}
+
+.footer-actions {
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+    flex-wrap: wrap;
+    padding-top: 20px;
+    border-top: 2px solid #e5e7eb;
+}
+
+.danger-btn, .secondary-btn {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 25px;
+    font-size: 0.9rem;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.danger-btn {
+    background: #ef4444;
+    color: white;
+}
+
+.danger-btn:hover {
+    background: #dc2626;
+}
+
+.secondary-btn {
+    background: #6b7280;
+    color: white;
+}
+
+.secondary-btn:hover {
+    background: #4b5563;
+}
+
+@media (max-width: 600px) {
+    body {
+        padding: 10px;
+    }
+    
+    .container {
+        padding: 15px;
+    }
+    
+    header h1 {
+        font-size: 1.4rem;
+    }
+    
+    .task-item {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 10px;
+    }
+    
+    .task-name {
+        text-align: center;
+    }
+    
+    .task-buttons {
+        justify-content: center;
+    }
+    
+    .stat-card {
+        flex-direction: column;
+        align-items: stretch;
+        text-align: center;
+    }
+    
+    .stat-label {
+        width: auto;
+    }
+    
+    .progress-bar-container {
+        width: 100%;
+    }
+    
+    .stat-percent {
+        width: auto;
+    }
+    
+    .add-task {
+        flex-direction: column;
+    }
+}
