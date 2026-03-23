@@ -1,295 +1,40 @@
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    -webkit-tap-highlight-color: transparent;
+/* keep your existing CSS, just ADD this below */
+
+.menu {
+    position: relative;
 }
 
-body {
-    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
-    background: #f5f5f5;
-    padding: 12px;
-    min-height: 100vh;
-}
-
-.container {
-    max-width: 600px;
-    margin: 0 auto;
-    background: white;
-    border-radius: 20px;
-    overflow: hidden;
-    box-shadow: 0 2px 10px rgba(0,0,0,0.05);
-}
-
-header {
-    text-align: center;
-    padding: 20px;
-    background: white;
-    border-bottom: 1px solid #eee;
-}
-
-header h1 {
-    font-size: 1.6rem;
-    color: #333;
-    margin-bottom: 8px;
-    font-weight: 600;
-}
-
-.date-box {
-    font-size: 0.9rem;
-    color: #666;
-    background: #f8f8f8;
-    display: inline-block;
-    padding: 6px 16px;
-    border-radius: 30px;
-}
-
-.tasks-section {
-    padding: 20px;
-}
-
-.tasks-section h2 {
-    font-size: 1rem;
-    color: #333;
-    margin-bottom: 12px;
-    font-weight: 600;
-}
-
-.tasks-list {
-    margin-bottom: 15px;
-}
-
-.task-item {
-    background: #f8f8f8;
-    padding: 14px;
-    margin-bottom: 10px;
-    border-radius: 12px;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    gap: 12px;
-}
-
-.task-name {
-    flex: 1;
-    font-size: 0.95rem;
-    color: #333;
-    word-break: break-word;
-}
-
-.task-buttons {
-    display: flex;
-    gap: 8px;
-}
-
-.btn-done, .btn-missed {
-    padding: 8px 16px;
+.menu-btn {
+    background: none;
     border: none;
-    border-radius: 30px;
-    font-size: 0.8rem;
-    font-weight: 500;
+    font-size: 18px;
     cursor: pointer;
-    transition: 0.2s;
 }
 
-.btn-done {
-    background: #10b981;
-    color: white;
-}
-
-.btn-done:active {
-    background: #059669;
-    transform: scale(0.96);
-}
-
-.btn-missed {
-    background: #ef4444;
-    color: white;
-}
-
-.btn-missed:active {
-    background: #dc2626;
-    transform: scale(0.96);
-}
-
-.add-task {
-    display: flex;
-    gap: 10px;
-    margin-top: 5px;
-}
-
-.add-task input {
-    flex: 1;
-    padding: 12px 14px;
-    border: 1px solid #ddd;
-    border-radius: 30px;
-    font-size: 0.9rem;
-    outline: none;
+.dropdown {
+    display: none;
+    position: absolute;
+    right: 0;
+    top: 25px;
     background: white;
-}
-
-.add-task input:focus {
-    border-color: #10b981;
-}
-
-.add-task button {
-    padding: 12px 20px;
-    background: #10b981;
-    color: white;
-    border: none;
-    border-radius: 30px;
-    font-weight: 500;
-    cursor: pointer;
-    font-size: 0.9rem;
-}
-
-.add-task button:active {
-    background: #059669;
-    transform: scale(0.96);
-}
-
-.progress-section {
-    padding: 0 20px 20px 20px;
-}
-
-.progress-section h2 {
-    font-size: 1rem;
-    color: #333;
-    margin-bottom: 12px;
-    font-weight: 600;
-}
-
-.stats-cards {
-    background: #f8f8f8;
-    border-radius: 16px;
-    padding: 16px;
-}
-
-.stat-card {
-    margin-bottom: 16px;
-    display: flex;
-    align-items: center;
-    gap: 12px;
-    flex-wrap: wrap;
-}
-
-.stat-label {
-    width: 90px;
-    font-size: 0.85rem;
-    font-weight: 500;
-    color: #666;
-}
-
-.progress-bar-container {
-    flex: 1;
-    height: 8px;
-    background: #e0e0e0;
-    border-radius: 10px;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
     overflow: hidden;
 }
 
-.progress-bar {
-    height: 100%;
-    background: #10b981;
-    width: 0%;
-    border-radius: 10px;
-    transition: width 0.3s ease;
-}
-
-.stat-percent {
-    width: 45px;
-    font-size: 0.85rem;
-    font-weight: 500;
-    color: #10b981;
-    text-align: right;
-}
-
-.footer-actions {
-    display: flex;
-    gap: 10px;
-    justify-content: center;
-    flex-wrap: wrap;
-    padding: 20px;
-    border-top: 1px solid #eee;
-}
-
-.danger-btn, .secondary-btn {
-    padding: 10px 18px;
+.dropdown button {
+    background: none;
     border: none;
-    border-radius: 30px;
-    font-size: 0.8rem;
+    padding: 10px 14px;
     cursor: pointer;
-    font-weight: 500;
+    width: 100%;
+    text-align: left;
 }
 
-.danger-btn {
-    background: #fee2e2;
-    color: #dc2626;
+.dropdown button:hover {
+    background: #f3f4f6;
 }
 
-.danger-btn:active {
-    background: #fecaca;
-}
-
-.secondary-btn {
-    background: #e5e7eb;
-    color: #4b5563;
-}
-
-.secondary-btn:active {
-    background: #d1d5db;
-}
-
-/* Delete task button inside tasks */
-.task-buttons button:last-child {
-    background: #fee2e2;
-    color: #dc2626;
-    padding: 8px 12px;
-}
-
-.task-buttons button:last-child:active {
-    background: #fecaca;
-}
-
-.task-item.completed {
-    background: #f0fdf4;
-}
-
-.task-item.completed .task-name {
-    color: #666;
-    text-decoration: line-through;
-}
-
-/* Mobile optimized */
-@media (max-width: 500px) {
-    body {
-        padding: 8px;
-    }
-    
-    .task-item {
-        padding: 12px;
-    }
-    
-    .btn-done, .btn-missed {
-        padding: 8px 14px;
-        font-size: 0.75rem;
-    }
-    
-    .stat-card {
-        gap: 8px;
-    }
-    
-    .stat-label {
-        width: 80px;
-        font-size: 0.8rem;
-    }
-    
-    .footer-actions {
-        gap: 8px;
-    }
-    
-    .danger-btn, .secondary-btn {
-        padding: 8px 14px;
-        font-size: 0.75rem;
-    }
+.show {
+    display: block;
 }
