@@ -243,8 +243,8 @@ function renderTasks() {
         taskDiv.innerHTML = `
             <div class="task-name">${escapeHtml(task)}</div>
             <div class="task-buttons">
-                <button class="btn-done" data-index="${index}" data-action="">✅ Done</button>
-                <button class="btn-missed" data-index="${index}" data-action="">❌ Missed</button>
+                <button class="btn-done" data-index="${index}" data-action="">✅ </button>
+                <button class="btn-missed" data-index="${index}" data-action="">❌ </button>
                 <button class="secondary-btn" data-index="${index}" data-action="delete" style="background:#ef4444; padding:8px 12px;">🗑️</button>
             </div>
         `;
